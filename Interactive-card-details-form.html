@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./src/Interactive-card-details-form.css" media="all">
+  <script src="./src/Interactive-card-details-form.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@500&display=swap">
+  <meta name="description" content="Author: Federico Borzani, Interactive card details form">
+</head>
+
+<body>
+  <main class="page">
+    <picture class="background">
+      <source media="(width<375px)" srcset="./src/images/bg-main-mobile.png"/>
+      <source media="(width>376px)" srcset="./src/images/bg-main-desktop.png"/>
+      <img src="./src/images/bg-main-mobile.png" alt="background image" />
+    </picture>
+  
+    <section class="rel container front">
+      <img src="./src/images/bg-card-front.png" alt="card front image" class="card front">
+      <img src="./src/images/card-logo.svg" alt="card logo image" class="abs logo">
+      <span class="abs" id="number-display">0000 0000 0000 0000</span>
+      <span class="abs" id="name-display">Jane Appleseed</span>
+      <span class="abs" id="mdate-display">00</span>
+      <span class="abs slash"> / </span>
+      <span class="abs" id="ydate-display">00</span>
+    </section>
+
+    <section class="rel container back">
+      <img src="./src/images/bg-card-back.png" alt="card back image" class="card back">
+      <span class="abs" id="cvc-display">000</span>
+    </section>
+    
+    <form class="form" action="post" target="./src/Action.php" novalidate>
+      <label for="name" class="label" id="name-label">Cardholder Name</label>
+      <input type="text" class="input" id="name" placeholder="e.g. Jane Appleseed" name="Cardholder" required />
+
+      <label for="number" class="label" id="number-label">Card Number</label>
+      <input type="text" class="input" id="number" placeholder="e.g. 1234 5678 9123 0000" name="Card number" required />
+    
+      <fieldset id="fieldset">
+        <legend id="legend">Exp. Date (MM/YY)</legend>
+        <label for="mdate" class="label"></label>
+        <input type="text" class="input" id="mdate" placeholder="MM" name="Month" required />
+        <label for="ydate" class="label"></label>
+        <input type="text" class="input" id="ydate" placeholder="YY" name="Year" required />
+      </fieldset>
+
+      <label for="cvc" class="label" id="cvc-label">CVC</label>
+      <input type="text" class="input" id="cvc" placeholder="e.g. 123" name="Verification code" required />
+
+      <input type="submit" id="confirm-btn" value="Confirm" class="button" />
+    </form>
+
+    <!-- Completed state -->
+
+    <div class="complete inactive">
+      <img src="./src/images/icon-complete.svg" alt="complete icon" />
+      <h1>thank you!</h1>
+      <p>We've added your card details</p>
+      <button type="button" class="button" id="continue-btn">Continue</button>
+    </div>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/eserengo/" target="_blank">Federico Borzani</a>.
+  </div>
+</body>
+</html>
